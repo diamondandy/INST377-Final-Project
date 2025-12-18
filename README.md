@@ -4,6 +4,7 @@ Our goal for our project is to present a website that allows users to compare sa
 The API we will be using is the Philadelphia City Employee Earnings API: https://catalog.data.gov/dataset/city-employee-earnings/resource/e7f2178e-9714-4e8e-b099-dc7f523041d1 
 
 
-HOW TO GUIDE FOR OUR WEBSITE: 
+HOW TO GUIDE FOR OUR WEBSITE (no heavy installation needed, just make sure you're on a secure browser(aka Safari, Google Chrome, etc.)): 
+
 HOME PAGE:
 ABOUT PAGE: 
