@@ -10,7 +10,7 @@ DEVELOPERS MANUAL:
 # Little Description
 The Philadelphia Salary Explorer is a web application that allows users to explore and compare salary data across different Philadelphia city agencies. The application provides interactive visualizations, statistical analysis, and comparison tools to help employees, policymakers, and citizens understand compensation patterns in city government.
 
-# Live Demo: https://inst377-final-project-chi.vercel.app/
+# Live Demo:  (https://samgwaa-lesiga-inst377-final-projec.vercel.app/) 
 
 # Target Browsers
 - **Desktop Browsers**: Chrome 90+, Firefox 88+, Safari 14+, Edge 90+
