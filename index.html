@@ -1,0 +1,113 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Philadelphia City Employee Salary Explorer</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav>
+      <div class="container">
+        <h1>Philly Salary Explorer</h1>
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="comparison.html">Comparison</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <h2>Philadelphia City Employee Salary Explorer</h2>
+        <p>Compare salaries across agencies and discover pay patterns</p>
+
+        <!-- Quick Stats -->
+        <div class="stats">
+          <div class="stat-card">
+            <h3 id="total-employees">-</h3>
+            <p>Total Employees</p>
+          </div>
+          <div class="stat-card">
+            <h3 id="total-agencies">-</h3>
+            <p>Agencies</p>
+          </div>
+          <div class="stat-card">
+            <h3 id="avg-salary">-</h3>
+            <p>Average Salary</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container">
+      <div class="content-layout">
+        <!-- Filters -->
+        <aside class="filters">
+          <h3>Filter Options</h3>
+
+          <label>Agency</label>
+          <select id="agency-filter">
+            <option value="">All Agencies</option>
+          </select>
+
+          <label>Job Title</label>
+          <input
+            type="text"
+            id="job-filter"
+            placeholder="Search job title..."
+          />
+
+          <label>Minimum Salary</label>
+          <input type="number" id="min-salary" value="0" />
+
+          <label>Maximum Salary</label>
+          <input type="number" id="max-salary" value="200000" />
+
+          <button onclick="applyFilters()" class="btn-primary">
+            Apply Filters
+          </button>
+          <button onclick="resetFilters()" class="btn-secondary">Reset</button>
+        </aside>
+
+        <!-- Chart Area -->
+        <div class="chart-area">
+          <h3>Average Salaries by Agency</h3>
+          <canvas id="salaryChart"></canvas>
+
+          <div class="insights">
+            <h3>Quick Insights</h3>
+            <div class="insight-cards">
+              <div class="card" onclick="filterPoliceVsFire()">
+                <h4>Police vs Fire</h4>
+                <p>Compare these departments</p>
+              </div>
+              <div class="card" onclick="filterEntryLevel()">
+                <h4>Entry-Level Positions</h4>
+                <p>Salaries under $50,000</p>
+              </div>
+              <div class="card" onclick="goToComparison()">
+                <h4>Detailed Analysis</h4>
+                <p>View detailed comparison</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 Philadelphia Salary Explorer | INST 377 Project</p>
+    </footer>
+
+    <!-- Supabase JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <!-- Custom Script -->
+    <script src="js/script.js"></script>
+  </body>
+</html>
