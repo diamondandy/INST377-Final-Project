@@ -1,0 +1,200 @@
+/* Phildelphia Salary Explorer by Diamond and Samgwaa */
+
+/* Comparison Builder Section */
+.comparison-builder {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--light-gray);
+}
+
+.builder-grid {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: var(--spacing-lg);
+    align-items: start;
+}
+
+.selection-panel {
+    background-color: var(--white);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+}
+
+.selection-panel h3 {
+    font-size: var(--font-size-xl);
+    color: var(--primary-blue);
+    margin-bottom: var(--spacing-md);
+    text-align: center;
+}
+
+.panel-a {
+    border-top: 4px solid var(--bright-cyan);
+}
+
+.panel-b {
+    border-top: 4px solid var(--amber);
+}
+
+.form-group {
+    margin-bottom: var(--spacing-md);
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: var(--spacing-xs);
+    color: var(--slate-gray);
+}
+
+.compare-button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 60px;
+}
+
+/* Results Dashboard */
+.results-dashboard {
+    padding: var(--spacing-xl) 0;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-lg);
+}
+
+.dashboard-card {
+    background-color: var(--white);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+}
+
+.dashboard-card h3 {
+    font-size: var(--font-size-xl);
+    color: var(--primary-blue);
+    margin-bottom: var(--spacing-md);
+}
+
+.card-large {
+    grid-column: span 2;
+}
+
+/* Box Plot Container */
+#boxplot-container {
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#boxplot-svg {
+    display: block;
+}
+
+/* Statistical Summary */
+.stats-comparison {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-md);
+}
+
+.stats-column h4 {
+    font-size: var(--font-size-lg);
+    color: var(--slate-gray);
+    margin-bottom: var(--spacing-sm);
+    text-align: center;
+    padding-bottom: var(--spacing-xs);
+    border-bottom: 2px solid var(--bright-cyan);
+}
+
+.stats-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.stats-table tr {
+    border-bottom: 1px solid var(--light-gray);
+}
+
+.stats-table td {
+    padding: var(--spacing-xs);
+}
+
+.stats-table td:first-child {
+    font-weight: 600;
+    color: var(--slate-gray);
+}
+
+.stat-value {
+    text-align: right;
+    color: var(--primary-blue);
+    font-weight: 700;
+}
+
+/* Insights Card */
+.insights-card {
+    display: flex;
+    flex-direction: column;
+}
+
+#insights-content {
+    flex: 1;
+    margin-bottom: var(--spacing-md);
+}
+
+.insight-item {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--spacing-sm);
+    background-color: var(--light-gray);
+    border-radius: var(--radius-sm);
+    margin-bottom: var(--spacing-xs);
+}
+
+.insight-item strong {
+    color: var(--slate-gray);
+}
+
+.insight-item span {
+    color: var(--primary-blue);
+    font-weight: 600;
+}
+
+#export-btn {
+    width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .builder-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .compare-button-container {
+        padding-top: 0;
+    }
+    
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .card-large {
+        grid-column: span 1;
+    }
+    
+    .stats-comparison {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .comparison-builder {
+        padding: var(--spacing-md) 0;
+    }
+    
+    .selection-panel {
+        padding: var(--spacing-md);
+    }
+}

@@ -1,0 +1,187 @@
+<!-- Phildelphia Salary Explorer by Diamond and Samgwaa-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Philadelphia Salary Explorer</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/about.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h1>Philly Salary Explorer</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="comparison.html">Detailed Comparison</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <section class="page-header">
+        <div class="container">
+            <h1>About This Project</h1>
+            <p class="tagline">Empowering transparency in Philadelphia city government salaries</p>
+        </div>
+    </section>
+
+    <!-- Mission Statement -->
+    <section class="mission-section">
+        <div class="container">
+            <div class="mission-content">
+                <h2>Our Mission</h2>
+                <p class="large-text">
+                    The public doesn't have an easy way to compare how much different city agencies 
+                    pay for similar roles. This lack of transparency makes it difficult for employees 
+                    to understand their worth, for policymakers to identify disparities, and for 
+                    citizens to hold their government accountable.
+                </p>
+                <p>
+                    Our goal is to build a web application that allows users to compare salaries 
+                    across agencies, providing insights into pay disparities and highlighting the 
+                    distribution of earnings for different roles. By making this data accessible 
+                    and visual, we empower all stakeholders to make informed decisions.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2>How It Works</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Data Source</h3>
+                    <p>
+                        We use the official Philadelphia City Employee Earnings API, which provides 
+                        comprehensive salary data for all city employees. Our database is regularly 
+                        updated to ensure accuracy.
+                    </p>
+                    <p class="meta">Last updated: <span id="last-updated">Loading...</span></p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🔍</div>
+                    <h3>Our Analysis</h3>
+                    <p>
+                        We process and aggregate raw salary data to calculate meaningful statistics 
+                        including averages, medians, ranges, and distributions. Our algorithms identify 
+                        patterns and disparities across departments.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">💡</div>
+                    <h3>Your Insights</h3>
+                    <p>
+                        Use our interactive tools to explore salary data, compare agencies, and 
+                        discover trends. Filter by job title, agency, or salary range to find 
+                        the information most relevant to you.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stakeholders -->
+    <section class="stakeholders-section">
+        <div class="container">
+            <h2>Who Benefits</h2>
+            <div class="stakeholders-grid">
+                <div class="stakeholder-card">
+                    <h3>👥 City Employees</h3>
+                    <p>
+                        Understand your compensation relative to peers in other agencies. 
+                        Use this data to advocate for fair wages and informed career decisions.
+                    </p>
+                </div>
+
+                <div class="stakeholder-card">
+                    <h3>🏛️ City Officials & Policy Makers</h3>
+                    <p>
+                        Identify pay disparities and inequities across departments. Make data-driven 
+                        decisions about budget allocation and compensation policies.
+                    </p>
+                </div>
+
+                <div class="stakeholder-card">
+                    <h3>🏢 City Agencies</h3>
+                    <p>
+                        Benchmark your agency's compensation against others. Attract and retain 
+                        talent with competitive, transparent salary structures.
+                    </p>
+                </div>
+
+                <div class="stakeholder-card">
+                    <h3>🌆 Philadelphia Citizens</h3>
+                    <p>
+                        Hold your government accountable. Understand how taxpayer dollars fund 
+                        city employee compensation across all departments.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section">
+        <div class="container">
+            <h2>The Team</h2>
+            <div class="team-content">
+                <p>
+                    This project was developed by <strong>Diamond Andy</strong> and 
+                    <strong>Samgwaa Lesiga</strong> as part of the INST 377 course.
+                </p>
+                <p>
+                    We built this application to address the critical need for salary transparency 
+                    in Philadelphia city government, combining web development skills with a 
+                    commitment to civic engagement.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Explore?</h2>
+            <p>Start comparing salaries and discovering insights about Philadelphia city employee compensation.</p>
+            <a href="index.html" class="btn btn-primary btn-large">Start Exploring Data</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Philadelphia Salary Explorer | INST 377 Final Project</p>
+            <p>Data Source: Philadelphia City Employee Earnings API</p>
+        </div>
+    </footer>
+
+    <script src="js/api.js"></script>
+    <script>
+
+        // Fetch and display last updated date
+        document.addEventListener('DOMContentLoaded', async () => {
+            try {
+                const stats = await fetchStatistics();
+                const lastUpdated = document.getElementById('last-updated');
+                if (lastUpdated && stats.lastUpdated) {
+                    lastUpdated.textContent = new Date(stats.lastUpdated).toLocaleDateString();
+                }
+            } catch (error) {
+                console.error('Error loading stats:', error);
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,200 @@
+<!-- Phildelphia Salary Explorer by Diamond and Samgwaa-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detailed Comparison - Philadelphia Salary Explorer</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/comparison.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h1>Philly Salary Explorer</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="comparison.html" class="active">Detailed Comparison</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Detailed Salary Analysis</h1>
+            <p>Compare salaries between agencies and job titles side-by-side</p>
+        </div>
+    </section>
+
+    <!-- Comparison Builder -->
+    <section class="comparison-builder">
+        <div class="container">
+            <div class="builder-grid">
+
+                <!-- Selection Panel A -->
+                <div class="selection-panel panel-a">
+                    <h3>Selection A</h3>
+                    <div class="form-group">
+                        <label for="agency-a">Agency</label>
+                        <select id="agency-a" class="form-control">
+                            <option value="">Select an agency...</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="job-title-a">Job Title</label>
+                        <select id="job-title-a" class="form-control">
+                            <option value="">Select a job title...</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Compare Button -->
+                <div class="compare-button-container">
+                    <button id="compare-btn" class="btn btn-primary btn-large">
+                        Compare →
+                    </button>
+                </div>
+
+                <!-- Selection Panel B -->
+                <div class="selection-panel panel-b">
+                    <h3>Selection B</h3>
+                    <div class="form-group">
+                        <label for="agency-b">Agency</label>
+                        <select id="agency-b" class="form-control">
+                            <option value="">Select an agency...</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="job-title-b">Job Title</label>
+                        <select id="job-title-b" class="form-control">
+                            <option value="">Select a job title...</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Dashboard -->
+    <section class="results-dashboard" id="results-section" style="display: none;">
+        <div class="container">
+            <div class="dashboard-grid">
+                
+                <!-- Box Plot Visualization -->
+                <div class="dashboard-card card-large">
+                    <h3>Salary Distribution</h3>
+                    <div id="boxplot-container"></div>
+                    <svg id="boxplot-svg" width="100%" height="300"></svg>
+                </div>
+
+                <!-- Statistical Summary -->
+                <div class="dashboard-card">
+                    <h3>Statistical Summary</h3>
+                    <div class="stats-comparison">
+                        <div class="stats-column">
+                            <h4 id="stats-title-a">Selection A</h4>
+                            <table class="stats-table">
+                                <tr>
+                                    <td>Minimum</td>
+                                    <td id="min-a" class="stat-value">-</td>
+                                </tr>
+                                <tr>
+                                    <td>Maximum</td>
+                                    <td id="max-a" class="stat-value">-</td>
+                                </tr>
+                                <tr>
+                                    <td>Average</td>
+                                    <td id="avg-a" class="stat-value">-</td>
+                                </tr>
+                                <tr>
+                                    <td>Median</td>
+                                    <td id="median-a" class="stat-value">-</td>
+                                </tr>
+                                <tr>
+                                    <td>Count</td>
+                                    <td id="count-a" class="stat-value">-</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="stats-column">
+                            <h4 id="stats-title-b">Selection B</h4>
+                            <table class="stats-table">
+                                <tr>
+                                    <td>Minimum</td>
+                                    <td id="min-b" class="stat-value">-</td>
+                                </tr>
+                                <tr>
+                                    <td>Maximum</td>
+                                    <td id="max-b" class="stat-value">-</td>
+                                </tr>
+                                <tr>
+                                    <td>Average</td>
+                                    <td id="avg-b" class="stat-value">-</td>
+                                </tr>
+                                <tr>
+                                    <td>Median</td>
+                                    <td id="median-b" class="stat-value">-</td>
+                                </tr>
+                                <tr>
+                                    <td>Count</td>
+                                    <td id="count-b" class="stat-value">-</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Histogram Chart -->
+                <div class="dashboard-card">
+                    <h3>Salary Range Distribution</h3>
+                    <canvas id="histogram-chart"></canvas>
+                </div>
+
+                <!-- Key Insights -->
+                <div class="dashboard-card insights-card">
+                    <h3>Key Insights</h3>
+                    <div id="insights-content">
+                        <div class="insight-item">
+                            <strong>Pay Gap:</strong>
+                            <span id="pay-gap">-</span>
+                        </div>
+                        <div class="insight-item">
+                            <strong>Higher Average:</strong>
+                            <span id="higher-avg">-</span>
+                        </div>
+                        <div class="insight-item">
+                            <strong>Disparity Score:</strong>
+                            <span id="disparity-score">-</span>
+                        </div>
+                    </div>
+                    <button id="export-btn" class="btn btn-secondary">Export Data</button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Philadelphia Salary Explorer | INST 377 Project</p>
+            <p>Data Source: Philadelphia City Employee Earnings API</p>
+        </div>
+    </footer>
+
+    <!-- D3.js for Box Plot -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <!-- Chart.js for Histogram -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <!-- Custom Scripts -->
+    <script src="js/api.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/comparison.js"></script>
+</body>
+</html>
