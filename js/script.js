@@ -1,6 +1,6 @@
 // Supabase Configuration
-const SUPABASE_URL = 'https://lnjawqvyrarkvyuyzecx.supabase.co';
-const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxuamF3cXZ5cmFya3Z5dXl6ZWN4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjYzNTE3ODAsImV4cCI6MjA4MTkyNzc4MH0.sMCpGRVseZMuuySkYy3MJy17NvL92ngnsemHcVjuaJ0';
+const SUPABASE_URL = 'https://lysdqkyawfbopppbydjd.supabase.co';
+const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx5c2Rxa3lhd2Zib3BwcGJ5ZGpkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjYzNjgxODYsImV4cCI6MjA4MTk0NDE4Nn0.W-ess60kzlLwr_m-0ZWBvxQezgjBGF8wdHJTSZXJMCk';
 const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
 let salaryChart = null;
